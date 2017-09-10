@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+  <link rel="stylesheet" href="../../../../bower_components/bootstrap-3.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="dingdan.css">
+  <script src="../../jquery.js"></script>
+  <script src="../../bootstrap.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle=hover]').parent().on('mouseenter mouseleave',function () {
+        $(this).toggleClass('open');
+      });
+      var enterTimeout = [], leaveTimeout = [];
+      $(document).off('click.bs.collapse.data-api', '[data-toggle="collapse"]');
+      $('[data-collapse-trigger=hover]').hover(function () {
+        var i = $(this);
+        var index = Number(i.data('id'));
+        clearTimeout(leaveTimeout[index]);
+        clearTimeout(enterTimeout[index]);
+        enterTimeout[index] = setTimeout(function () {
+          var target = i.data('target');
+          $(target).collapse('show');
+        }, 350);
+      }, function () {
+        var i = $(this);
+        var index = Number(i.data('id'));
+        clearTimeout(enterTimeout[index]);
+        clearTimeout(leaveTimeout[index]);
+        leaveTimeout[index] = setTimeout(function () {
+          var target = i.data('target');
+          $(target).collapse('hide');
+        }, 350);
+      });
+    });
+
+  </script>
+</head>
+<body>
+<nav class="nav navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><a href="">小米商城</a></li>
+      <li><a href="">MIUI</a></li>
+      <li><a href="">米聊</a></li>
+      <li><a href="">游戏</a></li>
+      <li><a href="">多看阅读</a></li>
+      <li><a href="">云服务</a></li>
+      <li><a href="">金融</a></li>
+      <li><a href="">小米商城手机版</a></li>
+      <li><a href="">问题反馈</a></li>
+      <li><a href="">Select Region</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="">登录</a></li>
+      <li><a href="">注册</a></li>
+      <li><a href="">消息通知</a></li>
+      <li class="dropdown">
+        <a  class="dropdown-toggle" href="" data-toggle="hover">
+          <span class="glyphicon glyphicon-shopping-cart"></span>购物车
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" style="width: 400px">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-3"><img class="img-thumbnail" src="../img/max.jpg" alt=""></div>
+              <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+              <div class="col-lg-3">1999元×1</div>
+            </div>
+            <div class="divider"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3"><img class="img-thumbnail" src="../img/max.jpg" alt=""></div>
+            <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+            <div class="col-lg-3">1999元×1</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-lg-3"><img class="img-thumbnail" src="../img/max.jpg" alt=""></div>
+            <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+            <div class="col-lg-3">1999元×1</div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar"style="background: white" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1">
+        <div class="navbar-header">
+          <a href="">
+            <img src="../img/logo.png" alt="" style="width: 50px;height: 50px">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <ul class="nav navbar-nav" id="nav-collapse">
+          <li>
+            <a href="#mi-phone" data-toggle="collapse" data-id="0" data-collapse-trigger="hover" data-target="#mi-phone">小米手机</a>
+          </li>
+          <li>
+            <a href="#red-mi" data-toggle="collapse" data-id="1" data-collapse-trigger="hover" data-target="#red-mi">红米</a>
+          </li>
+          <li><a href="">平板</a></li>
+          <li><a href="">笔记本</a></li>
+          <li><a href="">电视</a></li>
+          <li><a href="">盒子</a></li>
+          <li><a href="">影音</a></li>
+          <li><a href="">路由器</a></li>
+          <li><a href="">智能硬件</a></li>
+          <li><a href="">服务</a></li>
+          <li><a href="">社区</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <div class="navbar-form">
+          <div class="input-group ">
+            <input class="form-control" type="text">
+            <div class="input-group-btn">
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mi-phone" class="collapse col-lg-12  text-center">
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt=""style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+  </div>
+  <div id="red-mi" class="collapse col-lg-12  text-center">
+    <div class="col-lg-2">
+      <img src="../img/hongmi.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt=""style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="../img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="../../xiaomishouye/01.html">首页</a></li>
+      <li class="active">交易订单</li>
+    </ol>
+  </div>
+</div>
+<div class="container">
+  <div class="col-lg-2" style=";background-color: white;margin-right: 20px">
+    <div class="row">
+      <h4 style="margin-left: 10px">订单中心</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="">我的订单</a></li>
+        <li><a href="">意外保</a></li>
+        <li><a href="">团购订单</a></li>
+        <li><a href="">评价晒单</a></li>
+        <li><a href="">话费充值订单</a></li>
+        <li><a href="">以旧换新订单</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <h4>个人中心</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="">我的个人中心</a></li>
+        <li><a href="">消息通知</a></li>
+        <li><a href="">购买资格</a></li>
+        <li><a href="">现金账户</a></li>
+        <li><a href="">小米礼品卡</a></li>
+        <li><a href="">现金券</a></li>
+        <li><a href="">喜欢的商品</a></li>
+        <li><a href="">优惠券</a></li>
+        <li><a href="">收货地址</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <h4>售后服务</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="">服务记录</a></li>
+        <li><a href="">申请服务</a></li>
+        <li><a href="">领取快递报销</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <h4>账户管理</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="../../个人中心/selfcenter.html">个人信息</a></li>
+        <li><a href="">修改密码</a></li>
+        <li><a href="">社区VIP认证</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-9" style="background-color: white;">
+    <div class="row" style="position: relative">
+      <div class="col-lg-2"><h3>我的订单</h3></div>
+      <div class="col-lg-6">
+        <p class="warn">请谨防钓鱼链接或诈骗电话，<a href="">了解更多></a></p>
+      </div>
+    </div >
+    <div class="row">
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#all"  aria-controls="home" role="tab" data-toggle="tab">全部有效订单</a>
+          </li>
+          <li>
+            <a href="#no-pay"  aria-controls="home" role="tab" data-toggle="tab">待支付</a>
+          </li>
+          <li>
+            <a href="#no-had"  aria-controls="home" role="tab" data-toggle="tab">待收货</a>
+          </li>
+          <li>
+            <a href="#closed" aria-controls="home" role="tab" data-toggle="tab">已关闭</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="all">
+            <ul>
+              <li>
+                <div style="margin-right: 50px">
+                  <div><h3>已收货</h3></div>
+                  <div>
+                    <table class="table" style="width: 100%">
+                      <thead>
+                      <tr>
+                        <td>
+                          <p style="line-height: 42px">2017年08月14日 14:42
+                            <span>|</span>
+                            雷军<span >|</span>
+                            订单号：<a href="">5170814830402471</a>
+                            <span>|</span>在线支付
+                          </p>
+                        </td>
+                        <td>
+                          <p class="pull-right">订单金额：<span style="font-size: 30px;color: black">128.00</span>元</p>
+                        </td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/01.jpg" alt="小米蓝牙音频接收器 白色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">小米蓝牙音频接收器 白色</a>
+                                  </p>
+                                  <p>99元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/02.jpg" alt="手机USB Type-C 金属数据线 金色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">手机USB Type-C 金属数据线 金色</a>
+                                  </p>
+                                  <p>29元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                        <p class=""><a class="btn btn-small" href="">订单详情</a></p>
+                        <p><a class="btn btn-small " href="">申请售后</a></p>
+                      </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="margin-right: 50px">
+                  <div><h3>已收货</h3></div>
+                  <div>
+                    <table class="table" style="width: 100%">
+                      <thead>
+                      <tr>
+                        <td>
+                          <p style="line-height: 42px">2017年08月14日 14:42
+                            <span>|</span>
+                            雷军<span >|</span>
+                            订单号：<a href="">5170814830402471</a>
+                            <span>|</span>在线支付
+                          </p>
+                        </td>
+                        <td>
+                          <p class="pull-right">订单金额：<span style="font-size: 30px;color: black">128.00</span>元</p>
+                        </td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/01.jpg" alt="小米蓝牙音频接收器 白色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">小米蓝牙音频接收器 白色</a>
+                                  </p>
+                                  <p>99元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/02.jpg" alt="手机USB Type-C 金属数据线 金色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">手机USB Type-C 金属数据线 金色</a>
+                                  </p>
+                                  <p>29元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <p class=""><a class="btn btn-small" href="">订单详情</a></p>
+                          <p><a class="btn btn-small " href="">申请售后</a></p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </li>
+            </ul>
+              <nav aria-label="Page navigation" class="text-center">
+                <ul class="pagination ">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="no-pay">
+            <p class="text-center" style="margin:30px auto;font-size: x-large;color: grey ">当前没有待支付订单。</p>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="no-had">
+            <p class="text-center" style="margin:30px auto;font-size: x-large;color: grey ">当前没有待收货订单。</p>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="closed">
+            <ul>
+              <li>
+                <div style="margin-right: 50px">
+                  <div><h3>已关闭</h3></div>
+                  <div>
+                    <table class="table" style="width: 100%">
+                      <thead>
+                      <tr>
+                        <td>
+                          <p style="line-height: 42px">2017年08月14日 14:42
+                            <span>|</span>
+                            雷军<span >|</span>
+                            订单号：<a href="">5170814830402471</a>
+                            <span>|</span>在线支付
+                          </p>
+                        </td>
+                        <td>
+                          <p class="pull-right">订单金额：<span style="font-size: 30px;color: black">128.00</span>元</p>
+                        </td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/01.jpg" alt="小米蓝牙音频接收器 白色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">小米蓝牙音频接收器 白色</a>
+                                  </p>
+                                  <p>99元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/02.jpg" alt="手机USB Type-C 金属数据线 金色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">手机USB Type-C 金属数据线 金色</a>
+                                  </p>
+                                  <p>29元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <p class=""><a class="btn btn-small" href="">订单详情</a></p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="margin-right: 50px">
+                  <div><h3>已关闭</h3></div>
+                  <div>
+                    <table class="table" style="width: 100%">
+                      <thead>
+                      <tr>
+                        <td>
+                          <p style="line-height: 42px">2017年08月14日 14:42
+                            <span>|</span>
+                            雷军<span >|</span>
+                            订单号：<a href="">5170814830402471</a>
+                            <span>|</span>在线支付
+                          </p>
+                        </td>
+                        <td>
+                          <p class="pull-right">订单金额：<span style="font-size: 30px;color: black">128.00</span>元</p>
+                        </td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/01.jpg" alt="小米蓝牙音频接收器 白色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">小米蓝牙音频接收器 白色</a>
+                                  </p>
+                                  <p>99元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <a href="">
+                                    <img src="../img/02.jpg" alt="手机USB Type-C 金属数据线 金色">
+                                  </a>
+                                </div>
+                                <div class="col-lg-6">
+                                  <p>
+                                    <a href="">手机USB Type-C 金属数据线 金色</a>
+                                  </p>
+                                  <p>29元 × 1</p>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <p class=""><a class="btn btn-small" href="">订单详情</a></p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <nav aria-label="Page navigation" class="text-center">
+              <ul class="pagination ">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+      <form class=" form-inline " style="position: absolute;top:75px;right: 20px">
+          <div class="form-group pull-right" >
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="输入商品名称、商品编号">
+       <span class="input-group-btn">
+        <button type="button" class="btn btn-default ">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+       </span>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米电视</title>
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-3.3.7-dist/css/bootstrap.css">
+  <style>
+
+    .container{
+      margin-bottom: 10px;
+    }
+    .foot a{
+      color: grey;
+      text-decoration: none;
+    }
+    .foot a:hover{
+      color: orange;
+    }
+    .foot-links ul{
+      padding: 0px;
+      list-style: none;
+    }
+    .foot-links ul li{
+      margin-top: 10px;
+    }
+    .foot-links ul li a{
+      text-decoration: none;
+      color: grey;
+    }
+    .foot-links ul li a:hover{
+      color: orange;
+    }
+    .foot-links-right a{
+      color: orange;
+      text-decoration: none;
+      border: 1px solid orange;
+    }
+    .foot-links-right a:hover {
+      background-color: orange;
+      color: white;
+    }
+    .foot-nav {
+      padding: 0;
+    }
+    .foot-nav a{
+      border-right:1px solid lightgray;
+      color: grey;
+      padding: 3px !important;
+    }
+    .foot-nav a:hover{
+      color: orange;
+    }
+    .buy-btn{
+      margin-top:40px;
+      border: 1px solid orange;
+      text-decoration: none;
+      color: orange;
+    }
+    .buy-btn:hover{
+      margin-top:40px;
+      border: 1px solid orange;
+      text-decoration: none;
+      color: white;
+      background-color: orange;
+    }
+    .look-a a{
+      color: orange;
+      text-decoration: none;
+    }
+    .look-a{
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .tv-p{
+      border-left: 1px solid grey;
+      margin-left: -80px;
+      margin-top: 20px;
+    }
+    .affix{
+      top: 0;
+      left: 90px;
+    }
+    .tv-bg{
+      background-image:url("img/index_banner.jpg");
+      height: 1100px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .text-help h1{
+      color: white;
+      margin-top: 200px;
+    }
+    .text-help p{
+      color: white;
+      font-size: 20px;
+      margin: 10px;
+    }
+    #tip{
+      font-size: 10px;
+      color: grey;
+      margin-top: 480px;
+    }
+  </style>
+  <script src="../../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../../bower_components/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <script>
+
+    $(function () {
+      $('[data-toggle=hover]').parent().on('mouseenter mouseleave',function () {
+        $(this).toggleClass('open');
+      });
+      /* $('[data-toggle=hover]').parent().hover(function () {
+       $(this).addClass('open');
+       },function () {
+       $(this).removeClass('open');
+       })*/
+      var enterTimeout = [], leaveTimeout = [];
+      $(document).off('click.bs.collapse.data-api', '[data-toggle="collapse"]');
+      $('[data-collapse-trigger=hover]').hover(function () {
+        var i = $(this);
+        var index = Number(i.data('id'));
+        clearTimeout(leaveTimeout[index]);
+        clearTimeout(enterTimeout[index]);
+        enterTimeout[index] = setTimeout(function () {
+          var target = i.data('target');
+          $(target).collapse('show');
+        }, 350);
+      }, function () {
+        var i = $(this);
+        var index = Number(i.data('id'));
+        clearTimeout(enterTimeout[index]);
+        clearTimeout(leaveTimeout[index]);
+        leaveTimeout[index] = setTimeout(function () {
+          var target = i.data('target');
+          $(target).collapse('hide');
+        }, 350);
+      });
+
+
+    })
+
+  </script>
+</head>
+<body>
+<nav class="nav navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><a href="">小米商城</a></li>
+      <li><a href="">MIUI</a></li>
+      <li><a href="">米聊</a></li>
+      <li><a href="">游戏</a></li>
+      <li><a href="">多看阅读</a></li>
+      <li><a href="">云服务</a></li>
+      <li><a href="">金融</a></li>
+      <li><a href="">小米商城手机版</a></li>
+      <li><a href="">问题反馈</a></li>
+      <li><a href="">Select Region</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="">登录</a></li>
+      <li><a href="">注册</a></li>
+      <li><a href="">消息通知</a></li>
+      <li class="dropdown">
+        <a  class="dropdown-toggle" href="" data-toggle="hover">
+          <span class="glyphicon glyphicon-shopping-cart"></span>购物车
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" style="width: 400px">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-3"><img class="img-thumbnail" src="img/max.jpg" alt=""></div>
+              <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+              <div class="col-lg-3">1999元×1</div>
+            </div>
+            <div class="divider"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3"><img class="img-thumbnail" src="img/max.jpg" alt=""></div>
+            <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+            <div class="col-lg-3">1999元×1</div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-lg-3"><img class="img-thumbnail" src="img/max.jpg" alt=""></div>
+            <div class="col-lg-6">小米Max2 全网通版 4GB内存 金色 </div>
+            <div class="col-lg-3">1999元×1</div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar " style="background: white;border-bottom: 1px solid grey" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1">
+        <div class="navbar-header">
+          <a href="">
+            <img src="img/logo.png" alt="" style="width: 50px;height: 50px">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <ul class="nav navbar-nav" id="nav-collapse">
+          <li>
+            <a href="#mi-phone" data-toggle="collapse" data-id="0" data-collapse-trigger="hover" data-target="#mi-phone">小米手机</a>
+          </li>
+          <li>
+            <a href="#red-mi" data-toggle="collapse" data-id="1" data-collapse-trigger="hover" data-target="#red-mi">红米</a>
+          </li>
+          <li><a href="">平板</a></li>
+          <li><a href="">笔记本</a></li>
+          <li><a href="">电视</a></li>
+          <li><a href="">盒子</a></li>
+          <li><a href="">影音</a></li>
+          <li><a href="">路由器</a></li>
+          <li><a href="">智能硬件</a></li>
+          <li><a href="">服务</a></li>
+          <li><a href="">社区</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <div class="navbar-form">
+          <div class="input-group ">
+            <input class="form-control" type="text">
+            <div class="input-group-btn">
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mi-phone" class="collapse col-lg-12  text-center">
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt=""style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+  </div>
+  <div id="red-mi" class="collapse col-lg-12  text-center">
+    <div class="col-lg-2">
+      <img src="img/hongmi.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2 ">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt=""style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+    <div class="col-lg-2">
+      <img src="img/mi6.png" alt="" style="width: 150px;height: 100px">
+      <p>小米6</p>
+      <p>2499起</p>
+    </div>
+  </div>
+</nav>
+<div class="container affix" style="background: white"  data-spy="affix" data-offset-top="180" >
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>小米电视4A 32英寸</h3>
+    </div>
+    <div class="col-lg-2">
+      <p class="tv-p"><a href="">小米电视4A 43英寸</a></p>
+    </div>
+    <div class=" col-lg-offset-2 col-lg-5" style="margin-top:15px;">
+      <ul class="nav navbar-nav pull-right" >
+        <li><a style="color:#f56600" href="电视详细页.html">概述</a></li>
+        <li><a href="电视参数.html">参数</a></li>
+        <li><a href="">F码通道</a></li>
+        <li><a href="">安装服务</a></li>
+        <li><a href="">用户评价</a></li>
+        <li class="purchase"><a href="" style="color:white;background-color:#f56600 ">立即购买</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid tv-bg">
+  <div class="container">
+    <div class="text-help text-center">
+      <h1>千元新旗舰<br>小米电视4A 32寸</h1>
+      <p>64位四核处理器 | 1GB+4GB大内存 | 人工智能系统</p>
+      <p>1099元 <span style="text-decoration:double"></span> （含运费）</p>
+      <p id="tip">*该电视含开关机等形式的广告，开关机时的广告视频不能删除、更改，且第三方内容的广告视频无法控制</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

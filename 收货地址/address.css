@@ -1,0 +1,29 @@
+.add-address{
+  width: 230px;
+  height: 160px;
+  border: 1px solid gray;
+}
+.add-address a{
+  text-decoration: none;
+  color:lightgray;
+}
+.add-address a:hover{
+  text-decoration: none;
+  color: gray;
+}
+.address{
+
+  width: 230px;
+  height: 160px;
+  border: 1px solid gray;
+}
+.address h4{
+  margin-bottom: 20px;
+}
+.address a {
+  text-decoration: none;
+  color: orange;
+}
+body{
+  background: #f5f5f5;
+}
